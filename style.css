@@ -1,0 +1,42 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 40px;
+  color: #333;
+}
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.bio, .value-prop, .target-audience {
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+/* Artifact Card Styles */
+.artifact {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.artifact h2 {
+  margin-top: 0;
+}
+.artifact section {
+  margin-bottom: 10px;
+}
+.artifact a {
+  color: #0066cc;
+  text-decoration: none;
+}
+.artifact a:hover {
+  text-decoration: underline;
+}
+

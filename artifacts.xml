@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artifacts>
+  <artifact id="Artifact 1">
+    <title>AI Chatbot for Cooking PDF Overview</title>
+    <introduction>This PDF provides an overview of the AI-based cooking chatbot project.</introduction>
+    <description>A detailed document outlining the chatbot's design, features, and potential applications for generating new recipes based on user input.</description>
+    <objective>To document the scope, functionality, and future roadmap of the cooking chatbot.</objective>
+    <process>Created using LaTeX and diagrams; reviewed by stakeholders for clarity and completeness.</process>
+    <tools>LaTeX, Adobe Illustrator, Microsoft Word</tools>
+    <valueProposition>Offers a comprehensive understanding of the project's goals and technical details for non-technical stakeholders.</valueProposition>
+    <uniqueValue>Combines high-level vision with low-level implementation details in a single resource.</uniqueValue>
+    <relevance>Serves as the foundational artifact for pitches to potential sponsors and collaborators.</relevance>
+    <references><a href="AI_Chatbot_for_Cooking.pdf" target="_blank">View PDF</a></references>
+  </artifact>
+  <artifact id="Artifact 2">
+    <title>Digital Portfolio Site</title>
+    <introduction>This website serves as an interactive portfolio showcasing my projects and skills.</introduction>
+    <description>A responsive, shareable online portfolio built using HTML, CSS, JS, and XML for structured content.</description>
+    <objective>To provide a centralized platform for presenting work samples to employers and clients.</objective>
+    <process>Designed wireframes, developed front-end architecture, and implemented dynamic content loading.</process>
+    <tools>HTML5, CSS3, JavaScript, XML</tools>
+    <valueProposition>Enables visitors to browse project artifacts with contextual information in a user-friendly interface.</valueProposition>
+    <uniqueValue>Dynamic content management via XML and JS allows easy updates without modifying HTML structure.</uniqueValue>
+    <relevance>Highlights web development skills and provides a template for future portfolio expansions.</relevance>
+    <references><a href="index.html" target="_blank">Visit Site</a></references>
+  </artifact>
+  <artifact id="Artifact 3">
+    <title>Python Chatbot Implementation</title>
+    <introduction>An AI-powered chatbot that generates cooking recipes based on user prompts.</introduction>
+    <description>Built using Python and the ChatterBot library, with a custom logic adapter for recipe generation.</description>
+    <objective>To demonstrate AI integration for practical applications in the culinary domain.</objective>
+    <process>Configured ChatterBot, implemented custom adapters, and tested conversational flows with sample datasets.</process>
+    <tools>Python, ChatterBot, SQLite, GitHub</tools>
+    <valueProposition>Showcases ability to integrate AI libraries into domain-specific solutions.</valueProposition>
+    <uniqueValue>Custom logic adapter ensures recipe relevance and variation compared to generic chatbots.</uniqueValue>
+    <relevance>Demonstrates AI, Python, and database skills in a cohesive project.</relevance>
+    <references><a href="chatterbot/main.py" target="_blank">View Code</a></references>
+  </artifact>
+  <artifact id="Artifact 4">
+    <title>Recipe Data Management System</title>
+    <introduction>A backend system for storing and retrieving recipe data for the chatbot.</introduction>
+    <description>Utilizes SQLite to manage recipes, with scripts for initialization and data CRUD operations.</description>
+    <objective>To establish a reliable storage layer for the AI chatbot's dynamic content.</objective>
+    <process>Designed database schema, implemented init_db script, and integrated recipes.py for database interactions.</process>
+    <tools>Python, SQLite, SQLAlchemy, Git</tools>
+    <valueProposition>Provides robust data persistence and management for AI-driven applications.</valueProposition>
+    <uniqueValue>Lightweight database solution optimized for quick lookups and easy deployment.</uniqueValue>
+    <relevance>Ensures chatbot scalability and maintainability through structured data management.</relevance>
+    <references><a href="chatterbot/recipes.db" target="_blank">View Database</a></references>
+  </artifact>
+</artifacts>
+

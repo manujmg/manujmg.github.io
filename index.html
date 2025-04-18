@@ -4,143 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Professional Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      margin: 40px;
-    }
-    h1 {
-      color: #333;
-    }
-    h2 {
-      color: #444;
-    }
-    p, li, a {
-      color: #555;
-    }
-    a {
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    button {
-      padding: 8px 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-    }
-    form {
-      margin-top: 20px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      max-width: 400px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      color: #333;
-    }
-    input[type="text"],
-    textarea {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 12px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    input[type="submit"] {
-      margin-top: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <h1>Welcome to My Portfolio</h1>
-  <p>Hello! I'm me, a Senior RF Engineer and Antenna Designer.</p>
+  <header>
+    <h1>Manuel Jimenez</h1>
+    <p class="bio">I am a Senior RF Engineer and Antenna Designer with expertise in designing high-efficiency antenna systems and automating complex RF simulations.</p>
+    <p class="value-prop"><strong>My Value Proposition:</strong> I help organizations optimize their satellite communication systems by delivering innovative antenna solutions that enhance performance, reliability, and scalability.</p>
+    <p class="target-audience"><strong>Target Audience:</strong> Potential employers, clients, and collaborators in the telecommunications, aerospace, and SATCOM industries seeking cutting-edge RF expertise.</p>
+  </header>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>Chatbot for Cooking</strong> – 
-      <a href="AI_Chatbot_for_Cooking.pdf" target="_blank">PDF Overview</a> | 
-      <a href="https://github.com/manujmg/manujmg.github.io/tree/main/chatterbot" target="_blank">Source Folder</a>
-      <p>This project features a Python chatbot that gives you new recipes.</p>
-    </li>
-    <li>
-      <strong>Index.html (This Page)</strong> – 
-      <a href="https://github.com/manujmg/manujmg.github.io/blob/main/index.html" target="_blank">GitHub Source</a>
-    </li>
-    <!-- Add as many project links as you like -->
-  </ul>
+  <main id="artifacts">
+    <!-- Artifacts will be loaded here by script.js -->
+  </main>
 
-  <h2>Try the Chatbot</h2>
-  <p>
-    Still in progress. (Just a placeholder - Not working)
-    <button onclick="runChatbot()">Run Chatbot</button>
-  <script>
-    function runChatbot() {
-      // This is a placeholder. In a real-world scenario, you'd do something like:
-      // window.location.href = 'https://your-heroku-or-other-backend/chatbot';
-      // OR open a chat interface that communicates with your server via fetch/HTTP.
-      alert("This would launch your chatbot, but GitHub Pages can’t run Python. You need a server or alternative approach!");
-    }
-  </script>
-
-  <h2>Add a New Recipe (Demo Only)</h2>
-  <p>
-    Fill out the form below to 'submit' a new recipe. On GitHub Pages alone, this won't actually update <code>recipes.py</code>. 
-    You'd need a server backend or GitHub Action to handle the data.
-  </p>
-  <form onsubmit="return submitNewRecipe(event)">
-    <label for="recipeName">Recipe Name:</label>
-    <input type="text" id="recipeName" name="recipeName" required />
-
-    <label for="recipeSteps">Recipe Steps:</label>
-    <textarea id="recipeSteps" name="recipeSteps" rows="4" required></textarea>
-
-    <input type="submit" value="Submit Recipe" />
-  </form>
-
-  <script>
-    function submitNewRecipe(event) {
-      event.preventDefault();
-      const name = document.getElementById('recipeName').value.trim();
-      const steps = document.getElementById('recipeSteps').value.trim();
-
-      if (!name || !steps) {
-        alert("Please fill in all fields.");
-        return false;
-      }
-
-      // On a real server-based site, you'd send `name` and `steps` to a backend endpoint:
-      // fetch('/add-recipe', { method: 'POST', body: JSON.stringify({name, steps}), ... })
-
-      alert(
-        "Submitted new recipe:\n" +
-        "Name: " + name + "\n" +
-        "Steps: " + steps + "\n\n" +
-        "But remember, no actual file is updated here on GitHub Pages!"
-      );
-
-      // Clear the form
-      document.getElementById('recipeName').value = "";
-      document.getElementById('recipeSteps').value = "";
-      return false;
-    }
-  </script>
-
-  <h2>Contact Information</h2>
-  <p>Email: dontrytocontactme@gmail.com</p>
-  <p>
-    GitHub: 
-    <a href="https://github.com/manujmg/manujmg.github.io" target="_blank">
-      CLICK HERE!
-    </a>
-  </p>
+  <script src="script.js"></script>
 </body>
 </html>
 
