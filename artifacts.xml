@@ -1,52 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artifacts>
-  <artifact id="Artifact 1">
-    <title>AI Chatbot for Cooking PDF Overview</title>
+  <artifact id="Artifact 1">
+    <title>AI Chatbot for Cooking PDF</title>
     <introduction>This PDF provides an overview of the AI-based cooking chatbot project.</introduction>
-    <description>A detailed document outlining the chatbot's design, features, and potential applications for generating new recipes based on user input.</description>
-    <objective>To document the scope, functionality, and future roadmap of the cooking chatbot.</objective>
-    <process>Created using LaTeX and diagrams; reviewed by stakeholders for clarity and completeness.</process>
+    <description>A document outlining design, features, and roadmap for recipe generation.</description>
+    <objective>To document scope and future vision of the cooking chatbot.</objective>
+    <process>Authored in LaTeX, diagrammed in Illustrator, reviewed for clarity.</process>
     <tools>LaTeX, Adobe Illustrator, Microsoft Word</tools>
-    <valueProposition>Offers a comprehensive understanding of the project's goals and technical details for non-technical stakeholders.</valueProposition>
-    <uniqueValue>Combines high-level vision with low-level implementation details in a single resource.</uniqueValue>
-    <relevance>Serves as the foundational artifact for pitches to potential sponsors and collaborators.</relevance>
-    <references><a href="AI_Chatbot_for_Cooking.pdf" target="_blank">View PDF</a></references>
+    <valueProposition>Serves as a single resource to pitch the project to non‑technical stakeholders.</valueProposition>
+    <uniqueValue>Blends high‑level vision with low‑level implementation details.</uniqueValue>
+    <relevance>Foundation for sponsorship and collaboration discussions.</relevance>
+    <references>
+      <a href="AI_Chatbot_for_Cooking.pdf" target="_blank">📄 View PDF</a>
+    </references>
+    <image>images/artifact1.jpg</image>
   </artifact>
-  <artifact id="Artifact 2">
+
+  <artifact id="Artifact 2">
     <title>Digital Portfolio Site</title>
-    <introduction>This website serves as an interactive portfolio showcasing my projects and skills.</introduction>
-    <description>A responsive, shareable online portfolio built using HTML, CSS, JS, and XML for structured content.</description>
-    <objective>To provide a centralized platform for presenting work samples to employers and clients.</objective>
-    <process>Designed wireframes, developed front-end architecture, and implemented dynamic content loading.</process>
+    <introduction>This website is my interactive portfolio showcasing projects and skills.</introduction>
+    <description>Responsive, shareable site built with HTML, CSS, JS, and XML for structured content.</description>
+    <objective>Centralize work samples for employers and clients.</objective>
+    <process>Wireframed the layout, built front‑end, added dynamic XML loading.</process>
     <tools>HTML5, CSS3, JavaScript, XML</tools>
-    <valueProposition>Enables visitors to browse project artifacts with contextual information in a user-friendly interface.</valueProposition>
-    <uniqueValue>Dynamic content management via XML and JS allows easy updates without modifying HTML structure.</uniqueValue>
-    <relevance>Highlights web development skills and provides a template for future portfolio expansions.</relevance>
-    <references><a href="index.html" target="_blank">Visit Site</a></references>
+    <valueProposition>Easy artifact updates without touching HTML structure.</valueProposition>
+    <uniqueValue>Dynamic XML‑driven content makes expansion trivial.</uniqueValue>
+    <relevance>Demonstrates web‑dev skills and design acumen.</relevance>
+    <references>
+      <a href="index.html" target="_blank">🔗 Visit Site</a>
+    </references>
+    <image>images/artifact2.jpg</image>
   </artifact>
-  <artifact id="Artifact 3">
+
+  <artifact id="Artifact 3">
     <title>Python Chatbot Implementation</title>
-    <introduction>An AI-powered chatbot that generates cooking recipes based on user prompts.</introduction>
-    <description>Built using Python and the ChatterBot library, with a custom logic adapter for recipe generation.</description>
-    <objective>To demonstrate AI integration for practical applications in the culinary domain.</objective>
-    <process>Configured ChatterBot, implemented custom adapters, and tested conversational flows with sample datasets.</process>
+    <introduction>An AI‑powered chatbot that generates recipes from user prompts.</introduction>
+    <description>Built with Python and ChatterBot, featuring a custom logic adapter.</description>
+    <objective>Showcase AI integration for domain‑specific solutions.</objective>
+    <process>Configured ChatterBot, wrote custom adapters, tested with datasets.</process>
     <tools>Python, ChatterBot, SQLite, GitHub</tools>
-    <valueProposition>Showcases ability to integrate AI libraries into domain-specific solutions.</valueProposition>
-    <uniqueValue>Custom logic adapter ensures recipe relevance and variation compared to generic chatbots.</uniqueValue>
-    <relevance>Demonstrates AI, Python, and database skills in a cohesive project.</relevance>
-    <references><a href="chatterbot/main.py" target="_blank">View Code</a></references>
+    <valueProposition>Illustrates applying AI libraries to real‑world problems.</valueProposition>
+    <uniqueValue>Custom adapter ensures recipe relevance beyond generic chatbots.</uniqueValue>
+    <relevance>Proof of Python and AI skill in a cohesive project.</relevance>
+    <references>
+      <a href="chatterbot/main.py" target="_blank">💻 View Code</a>
+    </references>
+    <image>images/artifact3.jpg</image>
   </artifact>
-  <artifact id="Artifact 4">
+
+  <artifact id="Artifact 4">
     <title>Recipe Data Management System</title>
-    <introduction>A backend system for storing and retrieving recipe data for the chatbot.</introduction>
-    <description>Utilizes SQLite to manage recipes, with scripts for initialization and data CRUD operations.</description>
-    <objective>To establish a reliable storage layer for the AI chatbot's dynamic content.</objective>
-    <process>Designed database schema, implemented init_db script, and integrated recipes.py for database interactions.</process>
+    <introduction>Backend for storing and retrieving recipes for the chatbot.</introduction>
+    <description>SQLite database with initialization and CRUD scripts.</description>
+    <objective>Provide reliable persistence for AI content.</objective>
+    <process>Designed schema, wrote `init_db.py`, integrated `recipes.py` CRUD.</process>
     <tools>Python, SQLite, SQLAlchemy, Git</tools>
-    <valueProposition>Provides robust data persistence and management for AI-driven applications.</valueProposition>
-    <uniqueValue>Lightweight database solution optimized for quick lookups and easy deployment.</uniqueValue>
-    <relevance>Ensures chatbot scalability and maintainability through structured data management.</relevance>
-    <references><a href="chatterbot/recipes.db" target="_blank">View Database</a></references>
+    <valueProposition>Ensures scalability and maintainability for the chatbot.</valueProposition>
+    <uniqueValue>Lightweight, optimized for quick lookups and easy deployment.</uniqueValue>
+    <relevance>Core infrastructure enabling the AI recipe service.</relevance>
+    <references>
+      <a href="chatterbot/recipes.db" target="_blank">🗄️ View DB</a>
+    </references>
+    <image>images/artifact4.jpg</image>
   </artifact>
 </artifacts>
 

@@ -1,5 +1,7 @@
+/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
+/* Theme vars */
 :root {
   --bg: #f4f6fa;
   --primary: #4f46e5;
@@ -7,12 +9,10 @@
   --dark: #1e293b;
 }
 
+/* Reset & base */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
-
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -21,7 +21,7 @@ body {
   padding: 0 20px;
 }
 
-/* Hero */
+/* Hero header */
 header {
   background: linear-gradient(135deg, var(--primary), var(--light));
   color: white;
@@ -30,45 +30,47 @@ header {
   border-radius: 0 0 12px 12px;
 }
 header h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3rem; margin-bottom: 10px;
 }
 header .bio,
-header .value-prop {
+header .value-prop,
+header .target-audience {
   max-width: 800px;
   margin: 10px auto;
   opacity: 0.9;
 }
-header .value-prop strong {
+header strong {
   font-weight: 600;
 }
 
-/* Artifacts Grid */
+/* Artifacts container (column stack) */
 .artifacts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 60px 0;
 }
 
-/* Individual Card */
+/* Artifact card */
 .artifact {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;  
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
 }
-.artifact:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+.artifact.show {
+  opacity: 1;  
+  transform: translateY(0);
+
 }
+
+/* Image preview */
 .artifact-img {
   width: 100%;
-  display: block;
   height: 180px;
   object-fit: cover;
 }
+
+/* Headings & text */
 .artifact h2 {
   color: var(--primary);
   font-weight: 600;
@@ -84,16 +86,5 @@ header .value-prop strong {
   color: var(--primary);
   text-decoration: none;
   font-weight: 500;
-}
-
-/* AOS Overrides (optional tweak) */
-[data-aos] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition-property: opacity, transform;
-}
-[data-aos].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
