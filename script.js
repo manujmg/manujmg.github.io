@@ -1,79 +1,79 @@
-/* script.js – loads artifacts.xml and reveals cards on scroll           */
-/* Works in browsers, GitHub Pages, and local dev server (http://…).     */
+/* script.js – final version with background‑image cards */
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('artifacts.xml')
     .then(r => r.text())
-    .then(xmlString => new DOMParser().parseFromString(xmlString, 'application/xml'))
-    .then(xml => buildCards(xml))
-    .then(initRevealOnScroll)
+    .then(xmlStr => new DOMParser().parseFromString(xmlStr, 'application/xml'))
+    .then(xml => buildCards(xml))        // build DOM
+    .then(initRevealOnScroll)            // wire up observer
     .catch(err => console.error('Portfolio loader error →', err));
 });
 
 /* ------------------------------------------------------------------ */
 
-function buildCards(xml) {
+function buildCards(xml){
   const container = document.getElementById('artifacts');
 
   xml.querySelectorAll('artifact').forEach(node => {
-    const grab = tag => node.querySelector(tag)?.textContent.trim() || '';
+    const g = tag => node.querySelector(tag)?.textContent.trim() || '';
 
-    // XML → variables
+    /* pull data --------------------------------------------------- */
     const id    = node.getAttribute('id') || '';
-    const title = grab('title');
-    const intro = grab('introduction');
-    const desc  = grab('description');
-    const obj   = grab('objective');
-    const proc  = grab('process');
-    const tools = grab('tools');
-    const vp    = grab('valueProposition');
-    const uv    = grab('uniqueValue');
-    const rel   = grab('relevance');
-    const img   = grab('image');
+    const title = g('title');
+    const intro = g('introduction');
+    const desc  = g('description');
+    const obj   = g('objective');
+    const proc  = g('process');
+    const tools = g('tools');
+    const vp    = g('valueProposition');
+    const uv    = g('uniqueValue');
+    const rel   = g('relevance');
+    const img   = g('image');
 
-    /* -------- references (can contain raw <a> tag) -------- */
-    const refEl   = node.querySelector('references');
-    const refsHTML = refEl
-      ? new XMLSerializer().serializeToString(refEl).replace(/^<references>|<\/references>$/g, '')
+    /* serialize <references> to preserve internal <a> tag(s) ---- */
+    const refHTML = node.querySelector('references')
+      ? new XMLSerializer()
+          .serializeToString(node.querySelector('references'))
+          .replace(/^<references>|<\/references>$/g,'')
       : '';
 
-    /* -------- build card HTML -------- */
+    /* build card -------------------------------------------------- */
     const card = document.createElement('article');
     card.className = 'artifact';
+    card.style.backgroundImage = `url('${img}')`;
+
     card.innerHTML = `
-      ${img ? `<img src="${img}" alt="${title} preview" class="artifact-img">` : ''}
-      <h2>${id}: ${title}</h2>
-      <section><strong>Introduction:</strong> ${intro}</section>
-      <section><strong>Description:</strong> ${desc}</section>
-      <section><strong>Objective:</strong> ${obj}</section>
-      <section><strong>Process:</strong> ${proc}</section>
-      <section><strong>Tools & Tech used:</strong> ${tools}</section>
-      <section><strong>Value Proposition:</strong> ${vp}</section>
-      <section><strong>Unique Value:</strong> ${uv}</section>
-      <section><strong>Relevance:</strong> ${rel}</section>
-      <section class="refs">${refsHTML}</section>
+      <div class="artifact-content">
+        <h2>${id}: ${title}</h2>
+
+        <section><strong>Introduction:</strong> ${intro}</section>
+        <section><strong>Description:</strong> ${desc}</section>
+        <section><strong>Objective:</strong> ${obj}</section>
+        <section><strong>Process:</strong> ${proc}</section>
+        <section><strong>Tools & Tech used:</strong> ${tools}</section>
+        <section><strong>Value Proposition:</strong> ${vp}</section>
+        <section><strong>Unique Value:</strong> ${uv}</section>
+        <section><strong>Relevance:</strong> ${rel}</section>
+
+        <section class="refs">${refHTML}</section>
+      </div>
     `;
     container.appendChild(card);
   });
 }
 
-/* ------------------------------------------------------------------ */
-/* Intersection Observer reveal                                       */
-
-function initRevealOnScroll() {
+/* reveal‑on‑scroll ----------------------------------------------- */
+function initRevealOnScroll(){
   const cards = document.querySelectorAll('.artifact');
-  const io = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          io.unobserve(entry.target);   // animate once
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.15});
 
-  cards.forEach(c => io.observe(c));
+  cards.forEach(c=>io.observe(c));
 }
 

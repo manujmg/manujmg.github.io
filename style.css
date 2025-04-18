@@ -1,90 +1,72 @@
-/* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* Theme vars */
-:root {
-  --bg: #f4f6fa;
-  --primary: #4f46e5;
-  --light: #e0e7ff;
-  --dark: #1e293b;
+/* palette */
+:root{
+  --bg:#f4f6fa;
+  --primary:#4f46e5;
+  --overlay:rgba(0,0,0,.45); /* darken bg images */
+  --text-light:#fff;
+  --text-dark:#1e293b;
 }
 
-/* Reset & base */
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--dark);
-  line-height: 1.6;
-  padding: 0 20px;
+/* reset / base */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text-dark);
+  line-height:1.6;
+  padding:0 20px;
 }
 
-/* Hero header */
-header {
-  background: linear-gradient(135deg, var(--primary), var(--light));
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  border-radius: 0 0 12px 12px;
+/* hero unchanged */
+header{
+  background:linear-gradient(135deg,var(--primary),#a5b4fc);
+  color:#fff; text-align:center; padding:60px 20px; border-radius:0 0 12px 12px;}
+header h1{font-size:3rem;margin-bottom:10px}
+header p{max-width:850px;margin:8px auto 0;opacity:.9}
+header strong{font-weight:600}
+
+/* column layout so scrolling is required */
+.artifacts{display:flex;flex-direction:column;gap:60px;margin:60px 0}
+
+/* card now uses the image as BACKGROUND */
+.artifact{
+  position:relative;
+  min-height:440px;
+  border-radius:16px;
+  overflow:hidden;
+  transform:translateY(30px);
+  opacity:0;
+  transition:opacity .7s ease-out, transform .7s ease-out;
+  background-position:center;
+  background-size:cover;
+  box-shadow:0 8px 28px rgba(0,0,0,.06);
 }
-header h1 {
-  font-size: 3rem; margin-bottom: 10px;
-}
-header .bio,
-header .value-prop,
-header .target-audience {
-  max-width: 800px;
-  margin: 10px auto;
-  opacity: 0.9;
-}
-header strong {
-  font-weight: 600;
+/* dark overlay for readability */
+.artifact::before{
+  content:''; position:absolute; inset:0; background:var(--overlay);
 }
 
-/* Artifacts container (column stack) */
-.artifacts {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin: 60px 0;
-}
+/* reveal */
+.artifact.show{opacity:1; transform:translateY(0)}
 
-/* Artifact card */
-.artifact {
-  opacity: 0;  
-  transform: translateY(20px);
-  transition: opacity .6s ease-out, transform .6s ease-out;
+/* text layer */
+.artifact-content{
+  position:relative; z-index:1; /* above overlay */
+  padding:40px 32px;
+  max-width:780px;
+  color:var(--text-light);
 }
-.artifact.show {
-  opacity: 1;  
-  transform: translateY(0);
+.artifact-content h2{
+  font-size:1.75rem; margin-bottom:12px; font-weight:600;
+}
+.artifact-content section{margin-bottom:10px}
+.artifact-content strong{color:#e0e7ff}
+.artifact-content .refs{margin-top:14px}
+.artifact-content .refs a{color:#fef08a;text-decoration:none;font-weight:500}
+.artifact-content .refs a:hover{text-decoration:underline}
 
-}
-
-/* Image preview */
-.artifact-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Headings & text */
-.artifact h2 {
-  color: var(--primary);
-  font-weight: 600;
-  margin: 16px;
-}
-.artifact section {
-  padding: 0 16px 8px;
-}
-.artifact .refs {
-  padding: 16px;
-}
-.artifact .refs a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-}
+/* shorter on small screens */
+@media(max-width:600px){.artifact{min-height:360px}}
 
